@@ -27,7 +27,8 @@ public class HelloWorldServlet extends HttpServlet {
         
         String fn = request.getParameter("firstName");
         String ln = request.getParameter("lastName");
-        
+        request.setAttribute("fn", fn);
+        request.setAttribute("ln", ln);
         
         // if fn is null --> not exists
         // or fn is empty
@@ -40,9 +41,6 @@ public class HelloWorldServlet extends HttpServlet {
             return; // stop here and do not continue
         }
         
-        
-        request.setAttribute("fn", fn);
-        request.setAttribute("ln", ln);
         getServletContext().getRequestDispatcher("/WEB-INF/sayHello.jsp")
                 .forward(request, response);
     }
