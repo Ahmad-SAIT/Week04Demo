@@ -12,6 +12,6 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello ${fn} ${ln}</h1>
+        <h1>Hello ${person.firstName} ${person.lastName}</h1>
     </body>
 </html>
